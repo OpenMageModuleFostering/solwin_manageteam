@@ -12,7 +12,7 @@ class Solwin_Manageteam_Block_Index extends Mage_Core_Block_Template {
         parent::_prepareLayout();
 
         $pager = $this->getLayout()->createBlock('page/html_pager', 'custom.pager');
-        $pager->setAvailableLimit(array(8 => 8, 12 => 12, 24 => 24, 'all' => 'all'));
+        $pager->setAvailableLimit(array(6 => 6, 12 => 12, 24 => 24, 'all' => 'all'));
         $pager->setCollection($this->getCollection());
         $this->setChild('pager', $pager);
         $this->getCollection()->load();

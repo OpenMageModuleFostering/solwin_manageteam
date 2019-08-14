@@ -4,7 +4,7 @@
     <Solwin_Manageteam>
       <active>true</active>
       <codePool>community</codePool>
-      <version>1.0.1</version>
+      <version>1.0.3</version>
     </Solwin_Manageteam>
   </modules>
 </config>

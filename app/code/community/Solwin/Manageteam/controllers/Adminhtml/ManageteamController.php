@@ -76,6 +76,7 @@ class Solwin_Manageteam_Adminhtml_ManageteamController extends Mage_Adminhtml_Co
 
             try {
 
+
                 //save image
                 try {
 
@@ -100,7 +101,7 @@ class Solwin_Manageteam_Adminhtml_ManageteamController extends Mage_Adminhtml_Co
                                 $path = Mage::getBaseDir('media') . DS . 'manageteam' . DS . 'manageteam' . DS;
                                 $uploader = new Varien_File_Uploader('image');
                                 $uploader->setAllowedExtensions(array('jpg', 'png', 'gif'));
-                                $uploader->setAllowRenameFiles(false);
+                                $uploader->setAllowRenameFiles(true);
                                 $uploader->setFilesDispersion(false);
                                 $destFile = $path . $_FILES['image']['name'];
                                 $filename = $uploader->getNewFileName($destFile);
@@ -115,8 +116,9 @@ class Solwin_Manageteam_Adminhtml_ManageteamController extends Mage_Adminhtml_Co
                     $this->_redirect('*/*/edit', array('id' => $this->getRequest()->getParam('id')));
                     return;
                 }
-                
-                //save image    
+//save image
+
+
                 $model = Mage::getModel("manageteam/manageteam")
                         ->addData($post_data)
                         ->setId($this->getRequest()->getParam("id"))

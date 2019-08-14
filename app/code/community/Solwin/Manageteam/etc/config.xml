@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Solwin_Manageteam>
-            <version>1.0.1</version>
+            <version>1.0.3</version>
         </Solwin_Manageteam>
     </modules>
     <frontend>
@@ -69,7 +69,7 @@
             </manageteam_read>
         </resources>
     </global>
-<admin>
+    <admin>
         <routers>
             <manageteam>
                 <use>admin</use>
@@ -78,18 +78,26 @@
                     <frontName>admin_manageteam</frontName>
                 </args>
             </manageteam>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <Solwin_Manageteam_Adminhtml before="Mage_Downloadable">Solwin_Manageteam_Adminhtml</Solwin_Manageteam_Adminhtml>
+                    </modules>
+                </args>
+            </adminhtml>
         </routers>
     </admin>
     <adminhtml>
         <menu>
             <manageteam module="manageteam">
-                <title>Our Team</title>
+                <title>Solwin</title>
                 <sort_order>100</sort_order>
                 <children>
                     <manageteam module="manageteam">
-                        <title>Manage Our Team</title>
+                        <title>Manage Team</title>
                         <sort_order>10</sort_order>
-                        <action>manageteam/adminhtml_manageteam</action>
+                        <!--<action>manageteam/adminhtml_manageteam</action>-->
+                        <action>adminhtml/manageteam</action>
                     </manageteam>
                 </children>
             </manageteam>
@@ -102,11 +110,11 @@
                 <admin>
                     <children>
                         <manageteam translate="title" module="manageteam">
-                            <title>Our Team</title>
+                            <title>Manage Team</title>
                             <sort_order>1000</sort_order>
                             <children>
                                 <manageteam translate="title">
-                                    <title>Our Team</title>
+                                    <title>Manage Team</title>
                                     <sort_order>10</sort_order>
                                 </manageteam>
                             </children>
