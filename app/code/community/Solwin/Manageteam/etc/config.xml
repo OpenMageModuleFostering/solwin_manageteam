@@ -69,6 +69,17 @@
             </manageteam_read>
         </resources>
     </global>
+<admin>
+        <routers>
+            <manageteam>
+                <use>admin</use>
+                <args>
+                    <module>Solwin_Manageteam</module>
+                    <frontName>admin_manageteam</frontName>
+                </args>
+            </manageteam>
+        </routers>
+    </admin>
     <adminhtml>
         <menu>
             <manageteam module="manageteam">
