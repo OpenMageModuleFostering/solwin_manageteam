@@ -5,8 +5,9 @@ $actionName = Mage::app()->getRequest()->getActionName();
 $baseUrl = $this->getBaseUrl();
 $redirectPath = $baseUrl . $modname . DS . $controllerName . DS . $actionName;
 $enable = Mage::getStoreConfig('manageteamsection/manageteamgroup/enable');
+$currId = $this->getRequest()->getParam('id');
 if ($enable) {
-    if (!empty($this->getRequest()->getParam('id'))):
+    if ($currId != ''):
         $currId = $this->getRequest()->getParam('id');
         $collection = Mage::getModel('manageteam/manageteam')->load($currId);
         $media_url = Mage::getBaseUrl(Mage_Core_Model_Store::URL_TYPE_MEDIA);
@@ -117,11 +118,9 @@ if ($enable) {
                                     <a target="_new" href="mailto:<?php echo $teamData->getEmail(); ?>"><img src="<?php echo $this->getSkinUrl('images/manageteam/mail.png') ?>"></a>
                                 <?php endif; ?>
                             </div>
-                            <?php if ($teamData->getDescription()): ?>
-                                <a class="read-more" href="<?php echo $redirectPath . '/id/' . $teamData->getManageteam_id(); ?>" title="<?php echo $this->htmlEscape($teamData->getName()) ?>">
-                                    <?php echo __('Read More'); ?>	
-                                </a>
-                            <?php endif; ?>
+                            <a class="read-more" href="<?php echo $redirectPath . '/id/' . $teamData->getManageteam_id(); ?>" title="<?php echo $this->htmlEscape($teamData->getName()) ?>">
+                                <?php echo __('Read More'); ?>	
+                            </a>
                         </li>
                     <?php endforeach; ?>
                     <?php

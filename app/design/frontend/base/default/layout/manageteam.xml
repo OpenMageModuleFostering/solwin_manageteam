@@ -2,7 +2,7 @@
 <layout>
     <default>
         <reference name="top.links">
-            <action method="addLink">
+            <action method="addLink" ifconfig="manageteamsection/manageteamgroup/toplink">
                 <label>Our Team</label>
                 <url helper="manageteam/getManageteamsUrl"/>
                 <title>Our Team</title>
@@ -15,7 +15,7 @@
             <block type="manageteam/index"  template="manageteam/toplinks.phtml"/>
         </reference>
         <reference name="footer_links">
-            <action method="addLink" translate="label title" module="manageteam" ifconfig="manageteamsection/manageteamgroup/enable">
+            <action method="addLink" translate="label title" module="manageteam" ifconfig="manageteamsection/manageteamgroup/footerlink">
                 <label>Our Team</label>
                 <url helper="manageteam/getManageteamsUrl" />
                 <title>Our Team</title>
