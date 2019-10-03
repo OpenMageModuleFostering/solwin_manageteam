@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Solwin_Manageteam",
+    "name": "OpenMageModuleFostering\/Solwin_Manageteam",
     "type": "magento-module",
     "license": "OSL-v3.0",
     "homepage": "",
     "description": "Manage Team extension is used to display team member's information on the website with ease.",
     "authors": [
-    {
-        "name": "Sanjay Dabhoya",
-        "email": "stdabhoya@yahoo.com"
-    }
-],
+        {
+            "name": "Sanjay Dabhoya",
+            "email": "stdabhoya@yahoo.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
